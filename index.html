@@ -1,695 +1,650 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ElectroHub | متجر الإلكترونيات</title>
+<title>ElectroHub | متجر الإلكترونيات</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
-      color: #172033;
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#eaeded;
+  color:#111;
+}
 
-    header {
-      background: #0d1628;
-      color: white;
-      padding: 20px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* HEADER */
 
-    .logo {
-      font-size: 32px;
-      font-weight: bold;
-      color: #49bfff;
-    }
+.top-header{
+  background:#131921;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:14px 5%;
+}
 
-    .logo span {
-      color: #ffd34d;
-    }
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#ff9900;
+  white-space:nowrap;
+}
 
-    nav {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
+.search-box{
+  display:flex;
+  flex:1;
+  max-width:800px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 17px;
-    }
+.search-box input{
+  width:100%;
+  border:none;
+  padding:14px;
+  font-size:16px;
+  outline:none;
+  border-radius:6px 0 0 6px;
+}
 
-    nav a:hover {
-      color: #49bfff;
-    }
+.search-box button{
+  background:#febd69;
+  border:none;
+  padding:0 25px;
+  cursor:pointer;
+  font-size:20px;
+  border-radius:0 6px 6px 0;
+}
 
-    .cart-button {
-      background: #49bfff;
-      color: #07101f;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.cart-button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:17px;
+  cursor:pointer;
+  white-space:nowrap;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #0d1628, #203a61);
-      color: white;
-      text-align: center;
-      padding: 90px 20px;
-    }
+/* NAVIGATION */
 
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-    }
+.nav{
+  background:#232f3e;
+  color:white;
+  padding:12px 5%;
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
 
-    .hero h1 span {
-      color: #49bfff;
-    }
+.nav a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+}
 
-    .hero p {
-      font-size: 22px;
-      color: #d6dce8;
-      margin-bottom: 30px;
-    }
+/* HERO */
 
-    .hero button {
-      background: #49bfff;
-      border: none;
-      padding: 16px 35px;
-      font-size: 20px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.hero{
+  background:linear-gradient(120deg,#131921,#37475a);
+  color:white;
+  padding:70px 8%;
+  text-align:center;
+}
 
-    .products-section {
-      padding: 70px 7%;
-    }
+.hero h1{
+  font-size:48px;
+  margin-bottom:15px;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 38px;
-      margin-bottom: 45px;
-    }
+.hero p{
+  font-size:20px;
+  color:#ddd;
+  margin-bottom:25px;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
+.hero button{
+  background:#ff9900;
+  border:none;
+  padding:15px 30px;
+  border-radius:6px;
+  font-size:18px;
+  cursor:pointer;
+  font-weight:bold;
+}
 
-    .product {
-      background: white;
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
+/* CATEGORIES */
 
-    .product:hover {
-      transform: translateY(-8px);
-    }
+.categories{
+  padding:35px 5%;
+  background:white;
+}
 
-    .product-image {
-      font-size: 80px;
-      margin-bottom: 15px;
-    }
+.categories h2{
+  margin-bottom:25px;
+}
 
-    .product h3 {
-      font-size: 25px;
-      margin-bottom: 15px;
-    }
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
 
-    .product p {
-      color: #687085;
-      margin-bottom: 15px;
-    }
+.category{
+  background:#f3f3f3;
+  padding:25px 10px;
+  text-align:center;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:bold;
+}
 
-    .price {
-      color: #1595d3 !important;
-      font-size: 25px;
-      font-weight: bold;
-    }
+.category:hover{
+  background:#ddd;
+}
 
-    .product button {
-      width: 100%;
-      background: #49bfff;
-      border: none;
-      padding: 14px;
-      border-radius: 10px;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+/* PRODUCTS */
 
-    .cart {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 360px;
-      max-width: 90%;
-      height: 100%;
-      background: white;
-      z-index: 2000;
-      padding: 25px;
-      box-shadow: 5px 0 25px rgba(0,0,0,0.2);
-      transition: 0.4s;
-      overflow-y: auto;
-    }
+.products-section{
+  padding:40px 5%;
+}
 
-    .cart.active {
-      left: 0;
-    }
+.products-section h2{
+  font-size:32px;
+  margin-bottom:30px;
+}
 
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
 
-    .close-cart {
-      background: #e74c3c;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+.product{
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  transition:.3s;
+}
 
-    .cart-item {
-      border-bottom: 1px solid #ddd;
-      padding: 15px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
+.product:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
 
-    .cart-item-info {
-      flex: 1;
-    }
+.product-image{
+  height:150px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:80px;
+  background:#f7f7f7;
+  margin-bottom:15px;
+}
 
-    .cart-item h4 {
-      margin-bottom: 7px;
-    }
+.product h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
 
-    .remove-button {
-      background: #e74c3c;
-      color: white;
-      border: none;
-      padding: 7px 10px;
-      border-radius: 7px;
-      cursor: pointer;
-    }
+.rating{
+  color:#ff9900;
+  margin-bottom:10px;
+}
 
-    .total {
-      font-size: 23px;
-      font-weight: bold;
-      margin: 25px 0;
-    }
+.price{
+  font-size:22px;
+  color:#b12704;
+  font-weight:bold;
+  margin-bottom:15px;
+}
 
-    .checkout {
-      width: 100%;
-      background: #27ae60;
-      color: white;
-      border: none;
-      padding: 16px;
-      border-radius: 10px;
-      font-size: 18px;
-      cursor: pointer;
-    }
+.product button{
+  width:100%;
+  background:#ffd814;
+  border:1px solid #fcd200;
+  padding:12px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:15px;
+}
 
-    .empty-cart {
-      text-align: center;
-      color: #777;
-      margin-top: 40px;
-    }
+.product button:hover{
+  background:#f7ca00;
+}
 
-    footer {
-      background: #0d1628;
-      color: white;
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
-    }
+/* CART */
 
-    @media (max-width: 600px) {
+.cart{
+  position:fixed;
+  top:0;
+  left:-400px;
+  width:380px;
+  max-width:90%;
+  height:100vh;
+  background:white;
+  z-index:999;
+  padding:25px;
+  overflow-y:auto;
+  transition:.4s;
+  box-shadow:0 0 30px rgba(0,0,0,.3);
+}
 
-      header {
-        padding: 15px;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
+.cart.active{
+  left:0;
+}
 
-      .logo {
-        font-size: 25px;
-      }
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
 
-      nav {
-        gap: 12px;
-        font-size: 14px;
-      }
+.close-cart{
+  background:#e74c3c;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  cursor:pointer;
+  border-radius:5px;
+}
 
-      nav a {
-        font-size: 14px;
-      }
+.cart-item{
+  padding:15px 0;
+  border-bottom:1px solid #ddd;
+}
 
-      .hero h1 {
-        font-size: 38px;
-      }
+.remove{
+  margin-top:8px;
+  background:#e74c3c;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  cursor:pointer;
+  border-radius:5px;
+}
 
-      .hero p {
-        font-size: 18px;
-      }
+.total{
+  font-size:22px;
+  font-weight:bold;
+  margin:25px 0;
+}
 
-      .products-section {
-        padding: 50px 20px;
-      }
-    }
-  </style>
+.checkout{
+  width:100%;
+  background:#ffa41c;
+  border:none;
+  padding:15px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#131921;
+  color:white;
+  text-align:center;
+  padding:35px;
+  margin-top:40px;
+}
+
+@media(max-width:700px){
+
+  .top-header{
+    flex-wrap:wrap;
+  }
+
+  .search-box{
+    order:3;
+    width:100%;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
 <header>
 
-  <div class="logo">
-    ElectroHub <span>⚡</span>
-  </div>
+<div class="top-header">
 
-  <nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#products">المنتجات</a>
-    <a href="#about">من نحن</a>
-  </nav>
+<div class="logo">ElectroHub ⚡</div>
 
-  <button class="cart-button" onclick="openCart()">
-    🛒 السلة (<span id="cart-count">0</span>)
-  </button>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="ابحث عن المنتجات...">
+<button onclick="searchProducts()">🔍</button>
+</div>
 
-</header>
-
-
-<section class="hero" id="home">
-
-  <h1>
-    أحدث الإلكترونيات في
-    <span>مكان واحد</span>
-  </h1>
-
-  <p>
-    اكتشف أفضل الهواتف واللابتوبات والسماعات بأفضل الأسعار
-  </p>
-
-  <button onclick="document.getElementById('products').scrollIntoView()">
-    تسوق الآن
-  </button>
-
-</section>
-
-
-<section class="products-section" id="products">
-
-  <h2 class="section-title">
-    منتجاتنا
-  </h2>
-
-  <div class="products">
-
-
-    <div class="product">
-
-      <div class="product-image">📱</div>
-
-      <h3>هاتف ذكي</h3>
-
-      <p>
-        أداء سريع وكاميرا عالية الجودة
-      </p>
-
-      <p class="price">
-        AED 1,999
-      </p>
-
-      <button onclick="addToCart('هاتف ذكي', 1999)">
-        أضف إلى السلة
-      </button>
-
-    </div>
-
-
-
-    <div class="product">
-
-      <div class="product-image">💻</div>
-
-      <h3>لابتوب</h3>
-
-      <p>
-        مناسب للعمل والدراسة والألعاب
-      </p>
-
-      <p class="price">
-        AED 3,499
-      </p>
-
-      <button onclick="addToCart('لابتوب', 3499)">
-        أضف إلى السلة
-      </button>
-
-    </div>
-
-
-
-    <div class="product">
-
-      <div class="product-image">🎧</div>
-
-      <h3>سماعات لاسلكية</h3>
-
-      <p>
-        صوت قوي وبطارية طويلة
-      </p>
-
-      <p class="price">
-        AED 499
-      </p>
-
-      <button onclick="addToCart('سماعات لاسلكية', 499)">
-        أضف إلى السلة
-      </button>
-
-    </div>
-
-
-
-    <div class="product">
-
-      <div class="product-image">⌚</div>
-
-      <h3>ساعة ذكية</h3>
-
-      <p>
-        تتبع النشاط والصحة والرياضة
-      </p>
-
-      <p class="price">
-        AED 799
-      </p>
-
-      <button onclick="addToCart('ساعة ذكية', 799)">
-        أضف إلى السلة
-      </button>
-
-    </div>
-
-
-
-    <div class="product">
-
-      <div class="product-image">📺</div>
-
-      <h3>تلفزيون ذكي</h3>
-
-      <p>
-        شاشة عالية الدقة وتجربة مشاهدة رائعة
-      </p>
-
-      <p class="price">
-        AED 2,499
-      </p>
-
-      <button onclick="addToCart('تلفزيون ذكي', 2499)">
-        أضف إلى السلة
-      </button>
-
-    </div>
-
-
-
-    <div class="product">
-
-      <div class="product-image">🎮</div>
-
-      <h3>جهاز ألعاب</h3>
-
-      <p>
-        أفضل تجربة للألعاب والترفيه
-      </p>
-
-      <p class="price">
-        AED 1,899
-      </p>
-
-      <button onclick="addToCart('جهاز ألعاب', 1899)">
-        أضف إلى السلة
-      </button>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<section id="about" style="padding:60px 20px; text-align:center; background:white;">
-
-  <h2 style="font-size:35px; margin-bottom:20px;">
-    من نحن
-  </h2>
-
-  <p style="font-size:20px; color:#666; max-width:700px; margin:auto;">
-    ElectroHub هو متجر إلكتروني متخصص في أحدث الأجهزة والإلكترونيات.
-    نقدم منتجات مميزة بأسعار مناسبة وتجربة تسوق سهلة وسريعة.
-  </p>
-
-</section>
-
-
-
-<div class="cart" id="cart">
-
-  <div class="cart-header">
-
-    <h2>
-      🛒 سلة التسوق
-    </h2>
-
-    <button class="close-cart" onclick="closeCart()">
-      إغلاق
-    </button>
-
-  </div>
-
-
-  <div id="cart-items">
-
-    <p class="empty-cart">
-      السلة فارغة
-    </p>
-
-  </div>
-
-
-  <div class="total">
-
-    المجموع:
-    AED <span id="total-price">0</span>
-
-  </div>
-
-
-  <button class="checkout" onclick="checkout()">
-
-    إتمام الطلب
-
-  </button>
-
+<button class="cart-button" onclick="openCart()">
+🛒 السلة (<span id="cartCount">0</span>)
+</button>
 
 </div>
 
+<nav class="nav">
+<a href="#">☰ كل الأقسام</a>
+<a href="#products">الإلكترونيات</a>
+<a href="#products">الهواتف</a>
+<a href="#products">اللابتوبات</a>
+<a href="#products">الألعاب</a>
+<a href="#products">العروض</a>
+</nav>
 
+</header>
+
+<section class="hero">
+
+<h1>كل التكنولوجيا في مكان واحد ⚡</h1>
+
+<p>اكتشف أحدث الإلكترونيات بأفضل الأسعار</p>
+
+<button onclick="document.getElementById('products').scrollIntoView()">
+تسوق الآن
+</button>
+
+</section>
+
+<section class="categories">
+
+<h2>تسوق حسب القسم</h2>
+
+<div class="category-grid">
+
+<div class="category">📱<br>هواتف</div>
+
+<div class="category">💻<br>لابتوبات</div>
+
+<div class="category">🎧<br>سماعات</div>
+
+<div class="category">🎮<br>ألعاب</div>
+
+<div class="category">⌚<br>ساعات ذكية</div>
+
+<div class="category">📺<br>تلفزيونات</div>
+
+</div>
+
+</section>
+
+<section class="products-section" id="products">
+
+<h2>أفضل المنتجات</h2>
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">📱</div>
+
+<h3>iPhone 16 Pro</h3>
+
+<div class="rating">★★★★★</div>
+
+<div class="price">AED 3,999</div>
+
+<button onclick="addToCart('iPhone 16 Pro',3999)">
+أضف إلى السلة
+</button>
+
+</div>
+
+<div class="product">
+
+<div class="product-image">💻</div>
+
+<h3>MacBook Pro</h3>
+
+<div class="rating">★★★★★</div>
+
+<div class="price">AED 6,999</div>
+
+<button onclick="addToCart('MacBook Pro',6999)">
+أضف إلى السلة
+</button>
+
+</div>
+
+<div class="product">
+
+<div class="product-image">🎧</div>
+
+<h3>سماعات لاسلكية</h3>
+
+<div class="rating">★★★★☆</div>
+
+<div class="price">AED 499</div>
+
+<button onclick="addToCart('سماعات لاسلكية',499)">
+أضف إلى السلة
+</button>
+
+</div>
+
+<div class="product">
+
+<div class="product-image">🎮</div>
+
+<h3>PlayStation</h3>
+
+<div class="rating">★★★★★</div>
+
+<div class="price">AED 2,099</div>
+
+<button onclick="addToCart('PlayStation',2099)">
+أضف إلى السلة
+</button>
+
+</div>
+
+<div class="product">
+
+<div class="product-image">⌚</div>
+
+<h3>ساعة ذكية</h3>
+
+<div class="rating">★★★★☆</div>
+
+<div class="price">AED 799</div>
+
+<button onclick="addToCart('ساعة ذكية',799)">
+أضف إلى السلة
+</button>
+
+</div>
+
+<div class="product">
+
+<div class="product-image">📺</div>
+
+<h3>Smart TV 65"</h3>
+
+<div class="rating">★★★★★</div>
+
+<div class="price">AED 2,799</div>
+
+<button onclick="addToCart('Smart TV',2799)">
+أضف إلى السلة
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="cart" id="cart">
+
+<div class="cart-header">
+
+<h2>🛒 سلة التسوق</h2>
+
+<button class="close-cart" onclick="closeCart()">إغلاق</button>
+
+</div>
+
+<div id="cartItems">
+السلة فارغة
+</div>
+
+<div class="total">
+المجموع: AED <span id="totalPrice">0</span>
+</div>
+
+<button class="checkout" onclick="checkout()">
+إتمام الطلب
+</button>
+
+</div>
 
 <footer>
 
-  <h3>
-    ElectroHub ⚡
-  </h3>
+<h2>ElectroHub ⚡</h2>
 
-  <p style="margin-top:10px;">
-    © 2026 جميع الحقوق محفوظة
-  </p>
+<p>متجرك الإلكتروني للإلكترونيات</p>
+
+<p>© 2026 جميع الحقوق محفوظة</p>
 
 </footer>
 
-
-
 <script>
 
-let cart = [];
+let cart=[];
 
+function addToCart(name,price){
 
-function addToCart(name, price) {
+cart.push({
+name:name,
+price:price
+});
 
-  cart.push({
-    name: name,
-    price: price
-  });
+updateCart();
 
-  updateCart();
-
-  alert(name + " تمت إضافته إلى السلة 🛒");
-
-}
-
-
-function updateCart() {
-
-  const cartItems = document.getElementById("cart-items");
-
-  const cartCount = document.getElementById("cart-count");
-
-  const totalPrice = document.getElementById("total-price");
-
-
-  cartCount.innerText = cart.length;
-
-
-  if (cart.length === 0) {
-
-    cartItems.innerHTML = `
-      <p class="empty-cart">
-        السلة فارغة
-      </p>
-    `;
-
-    totalPrice.innerText = "0";
-
-    return;
-
-  }
-
-
-  let total = 0;
-
-  cartItems.innerHTML = "";
-
-
-  cart.forEach(function(item, index) {
-
-    total += item.price;
-
-
-    cartItems.innerHTML += `
-
-      <div class="cart-item">
-
-        <div class="cart-item-info">
-
-          <h4>${item.name}</h4>
-
-          <p>
-            AED ${item.price.toLocaleString()}
-          </p>
-
-        </div>
-
-
-        <button class="remove-button"
-        onclick="removeFromCart(${index})">
-
-          حذف
-
-        </button>
-
-
-      </div>
-
-    `;
-
-  });
-
-
-  totalPrice.innerText = total.toLocaleString();
+alert("تمت إضافة " + name + " إلى السلة 🛒");
 
 }
 
+function updateCart(){
 
+document.getElementById("cartCount").innerText=cart.length;
 
-function removeFromCart(index) {
+let cartItems=document.getElementById("cartItems");
 
-  cart.splice(index, 1);
+cartItems.innerHTML="";
 
-  updateCart();
+let total=0;
 
-}
+if(cart.length===0){
 
-
-
-function openCart() {
-
-  document.getElementById("cart").classList.add("active");
+cartItems.innerHTML="السلة فارغة";
 
 }
 
+cart.forEach(function(item,index){
 
+total+=item.price;
 
-function closeCart() {
+cartItems.innerHTML+=`
+<div class="cart-item">
 
-  document.getElementById("cart").classList.remove("active");
+<strong>${item.name}</strong>
 
-}
+<br>
 
+AED ${item.price.toLocaleString()}
 
+<br>
 
-function checkout() {
+<button class="remove" onclick="removeItem(${index})">
+حذف
+</button>
 
-  if (cart.length === 0) {
+</div>
+`;
 
-    alert("السلة فارغة 🛒");
+});
 
-    return;
-
-  }
-
-
-  alert(
-    "تم استلام طلبك بنجاح! 🎉"
-  );
-
-
-  cart = [];
-
-  updateCart();
-
-  closeCart();
+document.getElementById("totalPrice").innerText=total.toLocaleString();
 
 }
 
+function removeItem(index){
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+function openCart(){
+
+document.getElementById("cart").classList.add("active");
+
+}
+
+function closeCart(){
+
+document.getElementById("cart").classList.remove("active");
+
+}
+
+function checkout(){
+
+if(cart.length===0){
+
+alert("السلة فارغة");
+
+return;
+
+}
+
+alert("تم استلام طلبك بنجاح 🎉");
+
+cart=[];
+
+updateCart();
+
+closeCart();
+
+}
+
+function searchProducts(){
+
+let input=document.getElementById("searchInput").value.toLowerCase();
+
+let products=document.querySelectorAll(".product");
+
+products.forEach(function(product){
+
+let name=product.innerText.toLowerCase();
+
+if(name.includes(input)){
+
+product.style.display="block";
+
+}else{
+
+product.style.display="none";
+
+}
+
+});
+
+}
 
 </script>
-
 
 </body>
 </html>
